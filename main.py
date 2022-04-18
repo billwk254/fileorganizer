@@ -1,15 +1,16 @@
 import shutil, os , re
 filepattern = re.compile(r"(y2mate.com - )(.*?)$", re.DOTALL)
 
-
-filelocation = input("Do you want to use the current directory?(y/n): ")
-if filelocation.lower() == "y":
-    loc = os.getcwd()
-elif filelocation.lower() == "n":
-    user = input("Please enter a path to be used: ")
-    loc = os.path.abspath(user)
-else:
-    print ("Please Enter y/n ")
+while True:
+    filelocation = input("Do you want to use the current directory?(y/n): \n")
+    if filelocation.lower() == "y":
+        loc = os.getcwd()
+        break
+    elif filelocation.lower() == "n":
+        loc = os.path.abspath(input("Please enter a path to be used: \n"))
+        break
+    else:
+        print ("Please Enter y/n \n")
 
 ytfiles = os.listdir(loc)
 
