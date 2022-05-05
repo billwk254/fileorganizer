@@ -4,7 +4,9 @@ print("{0:>45}".format("RENAME ALL FILES DOWNLOADED FROM YOUTUBE\n"))
 
 location = ""
 
+
 def take_user_input():
+    global location
     """A FUNCTION THAT ASKS THE USER TO PROVIDE A DIRECTORY TO
     WORK WITH"""
     while True:
@@ -22,8 +24,10 @@ def take_user_input():
         else:
             print ("Please Enter y/n \n")
 
+take_user_input()
 
 def rename_files():
+    global location
     """A FUNCTION FOR RENAMING ALL YOUTUBE FILES DOWNLOADED FROM Y2MATE.COM
       """
       #a regular expression to match files downloaded from y2mate.com
@@ -46,7 +50,7 @@ def rename_files():
         #use the shutil module to rename the files
         shutil.move(oldfilename , newfilename)
 
-
+rename_files()
 
 
 
